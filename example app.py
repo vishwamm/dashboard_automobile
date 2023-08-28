@@ -4,7 +4,7 @@ import plotly.express as px
 import pandas as pd
 
 app = Dash(__name__)
-df=pd.read_csv("C:\\Users\\vishwa\\Downloads\\Automobile_data.csv")
+df=pd.read_csv("Automobile_data.csv")
 d=df.head()
 app.layout=html.Div([html.H1(children='My app'),dcc.RadioItems(options=['stroke','horsepower','peak-rpm'],value='horsepower',id='drop-box'),dash_table.DataTable(data=d.to_dict('records')),dcc.Graph(figure={},id='graph'),dcc.Dropdown(options=['city-mpg','highway-mpg','price'],value='price',id='id2'),dcc.Graph(figure={},id='graph1')])
 @app.callback(
